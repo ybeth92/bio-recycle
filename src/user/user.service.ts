@@ -30,12 +30,14 @@ export class UserService {
     }
 
     async findByEmail(data: UserInterface) {
-        return await this.userRepository
+        const user = await this.userRepository
             .createQueryBuilder('user')
             .where({ email: data.email })
             .addSelect('user.password')
             .innerJoinAndSelect('user.role', 'role')
             .getOne();
+        console.log(user)
+        return user;
     }
 
     async createUser(dto: CreateUserDto) {
