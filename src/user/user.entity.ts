@@ -1,7 +1,8 @@
 import { hash } from "bcryptjs";
 import { City } from "src/city/city.entity";
+import { Exchange } from "src/exchange/exchange.entity";
 import { Role } from "src/role/role.entity";
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
 @Entity({ name: 'users' })
@@ -52,6 +53,9 @@ export class User {
 
     @Column({type: 'int'})
     point: number;
+
+    @OneToMany(type => Exchange, exchange => exchange.user)
+    exchanges: Exchange[];
 
     @BeforeInsert()
     @BeforeUpdate()

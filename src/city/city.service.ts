@@ -15,4 +15,8 @@ export class CityService {
         return await this.cityRepository.findOne(id);
     }
 
+    async getAll(): Promise<City[]>{
+        return await this.cityRepository.find();
+    }
+
 }

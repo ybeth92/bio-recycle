@@ -36,7 +36,6 @@ export class UserService {
             .addSelect('user.password')
             .innerJoinAndSelect('user.role', 'role')
             .getOne();
-        console.log(user)
         return user;
     }
 
