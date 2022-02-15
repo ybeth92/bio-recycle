@@ -21,7 +21,7 @@ export class ExchangeService {
             const newExchange = new Exchange();
             const user = await this.userService.findById(id);
             const service = await this.serviceService.findById(dto.service);
-            const num = 5;
+            const num = 18;
             const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let result1= ' ';
             const charactersLength = characters.length;
@@ -35,7 +35,7 @@ export class ExchangeService {
                 result1 += characters.charAt(Math.floor(Math.random() * charactersLength));
             }
 
-            console.log(result1);
+            newExchange.code = result1
 
             const response = await this.exchangeRepository.save(newExchange);
 

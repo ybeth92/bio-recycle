@@ -23,4 +23,7 @@ export class Exchange {
 
     @Column({ type: 'decimal', precision: 10, scale: 2, default: 0.00 })
     totalAmount: number;
+
+    @Column({ type: 'varchar', length: 20, nullable: false })
+    code: string;
 }
