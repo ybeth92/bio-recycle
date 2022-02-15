@@ -7,8 +7,8 @@ const boom = require('@hapi/boom');
 export class Middleware implements NestMiddleware {
 
     use(req: Request, res: Response, next: Function) {
-        console.log(req)
-        console.log(res)
+        // console.log(req)
+        // console.log(res)
         next();
     }
 }

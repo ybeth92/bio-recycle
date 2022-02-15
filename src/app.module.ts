@@ -11,7 +11,7 @@ import { CityModule } from './city/city.module';
 import { ServiceModule } from './service/service.module';
 import { ExchangeModule } from './exchange/exchange.module';
 import databaseConfig from './config/database.config';
-import { Middleware } from './meddlewares/middleware';
+import { Middleware } from './middlewares/middleware';
 
 @Module({
   imports: [
